@@ -1,3 +1,4 @@
+#include <stdio.h>
 int main() {
 float salary;
 float total = 0;
