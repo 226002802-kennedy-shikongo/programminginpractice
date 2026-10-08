@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h>main
 int main()
 {
     char municipality[50];
