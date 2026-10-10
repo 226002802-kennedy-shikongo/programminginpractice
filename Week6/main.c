@@ -1,8 +1,10 @@
 #include <stdio.h>
+#include <string.h> 
+
 
  #define SIZE 50
 #define BUDGET_COUNT 10
-
+#define REG_COUNT 20
 
  int main() {
     float salaries[SIZE];
@@ -79,6 +81,33 @@ for (int i = 0; i < BUDGET_COUNT - 1; i++) {
 printf("\nSorted budgets:\n");
 for (int i = 0; i < BUDGET_COUNT; i++) {
     printf("%.2f\n", budgets[i]);
+}
+
+char registrations[REG_COUNT][20];
+char searchReg[20];
+int regfound = 0;
+printf("\n-----Student Registrations -----\n");
+for (int i = 0; i < REG_COUNT; i++) {
+    printf("Enter vehicle registration %d: ", i + 1);
+    scanf("%19s", registrations[i]);
+}
+
+printf("\nVehicle Registrations:\n");
+for (int i = 0; i < REG_COUNT; i++) {
+    printf("%s\n", registrations[i]);
+}
+printf("\nEnter a vehicle registration to search for: ");
+scanf("%19s", searchReg);
+
+for (int i = 0; i < REG_COUNT; i++) {
+    if (strcmp(registrations[i], searchReg) == 0) {
+        printf("Registration found at position %d\n", i);
+        regfound = 1;
+        break;
+    }
+}
+if (!regfound) {
+    printf("registration not found\n");
 }
 
         return 0;  }
